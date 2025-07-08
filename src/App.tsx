@@ -44,7 +44,7 @@ const App = () => {
         }
         if (value === "=") {
             let exe = input.replaceAll("×", "*").replaceAll("÷", "/");
-            return setInput(String(eval(exe)));
+            return setInput(String(new Function(`return ${exe}`)()));
         }
     };
 
